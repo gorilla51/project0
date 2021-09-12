@@ -1,0 +1,554 @@
+.topbar-wrapper{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #333;
+    
+}
+/* init link color */
+.topbar a{
+    font-size: 12px;
+    color: #b0b0b0;
+    display: block;
+    
+} 
+
+/* mouse over */
+.topbar a:hover{
+    color: #fff;
+}
+.topbar .line{
+    font-size: 12px;
+    color:#424242;
+    margin:0 8px; 
+}
+
+/* initialise the left navigtor */
+
+.service, .topbar li{
+    float: left;
+
+}
+
+.app{
+    position: relative;
+}
+/*pseudo element for dropdown menu*/
+.app::after{
+    display: none;
+    content:'' ;
+    /* absolute position */
+    position: absolute;
+    width: 0;
+    height: 0;
+   /*inti 4 borders*/
+    border: 8px solid transparent;
+   /* remove top border */
+    border-top: none;
+    /*inti the color of bottom border*/
+    border-bottom-color:#fff;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+}
+
+.app:hover::after{
+    display: block;
+   /* height: 148px; */
+}
+.app:hover .qrcode{
+    display: block;
+   /* height: 148px; */
+}
+
+/*init dropdown menu */
+.app .qrcode{
+    display: none;
+    position: absolute;
+    z-index: 999;
+    left: -40px;
+    width: 124px;
+    height: 148px;
+    /* height: 0;
+    overflow: hidden; */
+
+    line-height: 1px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,.3)
+    
+    
+
+}
+
+.app .qrcode img{ 
+    width: 90px;
+    margin: 17px;
+    margin-bottom: 10px;
+}
+
+.app .qrcode span{
+    font-size: 14px;
+    color: #000;
+}
+
+.shoppingcart, .user-info{
+    float: right;
+}
+
+.shoppingcart{
+    margin-left: 26px;
+    position: relative;
+    z-index: 1;
+   
+}
+.shoppingcart a{
+    width: 120px;
+    border: 1px solid transparent;
+    border-bottom: none;
+    position: relative;
+    text-align: center;
+    z-index: 999;
+    
+}
+
+.shoppingcart:hover a{
+    background-color: #fff;
+  
+    color: #ff6700;
+   
+}
+
+.shoppingcart i{
+    margin-right: 2px;  
+
+}
+
+
+.shoppingcart:hover .msg{
+    display: block;
+}
+
+.shoppingcart .msg{
+    display: none;
+    position: absolute;
+    top: 41px;
+    left: -200px;
+    width: 320px;
+    height: 100px;
+    line-height: 100px;
+    font-size: 12px;
+    color:#424242;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-top: none;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0,0,0,.3)
+   
+
+}
+
+.header-wrapper{
+    position: relative;
+}
+
+/* init header */
+.header{
+    height: 100px;
+   
+
+    
+}
+
+.header .logo{
+    float: left;
+    margin-top: 22px;
+    width: 56px;
+    height: 56px;
+    position: relative;
+    overflow: hidden;
+    /* hide text in the logo */
+    text-indent: -9999px;
+} 
+
+
+.header .logo a{
+    position:absolute;
+    width: 56px;
+    height: 56px;
+    left: 0;
+    /*background-color: steelblue ; */
+    background-image: url(/img/Xiaomi_logo.png);
+    background-position: center;
+    transition: left 0.3s;
+
+}
+
+.header .logo .sq{
+    background-image: url(/img/Xiaomi_logo.svg.png);
+    left:-56px;
+}
+
+.header .logo:hover .rd{
+    left: 56px;
+}
+
+.header .logo:hover .sq{
+    left: 0;
+}
+
+/* inti middle nav bar */
+
+.header .nav-wrapper {
+    float: left;
+    margin-left: 7px;
+}
+
+.header .nav{
+    height: 100px;
+    line-height: 100px;
+    padding-left: 58px;
+}
+
+.nav > li{
+    float: left;
+}
+
+.all-goods-wrapper{
+    position: relative;
+    
+}
+
+.left-menu{
+    width: 234px;
+    /*height:auto;*/
+    height: 420px;
+    padding: 19px 0;
+    background-color: rgba(0,0,0,.5);
+    position: absolute;
+    z-index: 99;
+    left: -121px;
+    line-height: 1;
+}
+ul.left-menu li a{
+    display: block;
+    height: 42px;
+    line-height: 42px;
+    color: white;
+    margin-right: 0;
+    padding: 0 30px;
+    font-size: 14px;
+}
+ul.left-menu li a:hover{
+    color:white;
+    background-color:#ff6700;
+}
+.left-menu a i{
+    float: right;
+    line-height: 42px;
+}
+.nav-wrapper li a{
+    font-size: 16px;
+    margin-right: 20px;
+    display:block;
+}
+
+.nav-wrapper li a:hover{
+    color: #ff6700;
+}
+
+/* Hide first category, it also can be appied by js */ 
+
+.all-goods{
+    display: hidden;
+}
+
+.nav .show:hover ~ .goods-info,
+.nav .goods-info:hover{
+    height: 228px;
+    border-top: 1px solid rgb(224, 224, 224);
+    box-shadow: 0 5px 3px rgba(0, 0, 0, .2);
+}
+.nav .goods-info{
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    transition: height 0.3s;
+
+    z-index: 99;
+   
+    
+}
+
+.search-wrapper{
+    width: 296px;
+    height: 50px;
+    float:right;
+    position: relative;
+    margin-top: 25px;
+}
+
+.search-wrapper .search-in{
+    box-sizing: border-box;
+    border: none;
+    width: 244px;
+    float: left;
+    padding: 0 10px;
+    height: 50px;
+    font-size: 16px;
+    border: 1px solid rgb(224, 224, 224);
+    outline: none;
+}
+
+.search-wrapper .search-in:focus,
+.search-wrapper .search-in:focus+ button
+
+{
+    border-color: #ff6700;
+   
+}
+
+
+.search-wrapper .search-btn{
+    float:left;
+    height: 50px;
+    width: 52px;
+    padding: 0;
+    border: none;
+    background-color: #fff;
+    color: #616161;
+    border: 1px solid rgb(224, 224, 224);
+    border-left: none;
+}
+.search-wrapper .search-btn:hover{
+    background-color: #ff6700;
+    color: #fff;
+    border: none;
+}
+
+/* use js to create the dropdown stuff */
+.search-wrapper .search-content{
+    height: 0;
+    overflow: hidden;
+    width: 242px;
+    background-color: #fff;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    transition: height 0.3s;
+    z-index: 999;
+  
+  
+  
+  
+}
+.search-wrapper .search-in:focus ~ .search-content{
+    height: 300px;  
+    border: 1px solid #ff6700;
+    border-top: none;
+}
+
+/*
+.search-wrapper .search-in .search-content:focus{
+    height: 300px;  
+    border: 1px solid #ff6700;
+    border-top: none;
+   
+}
+*/
+
+.banner{
+    position:relative;
+    height: 460px;
+}
+.banner .img-list li{
+    position: absolute;
+}
+.banner img{
+    width: 100%;
+    vertical-align: top;
+}
+
+/* init pointer */
+.pointer{
+    position: absolute;
+    bottom: 22px;
+    right: 35px;
+}
+
+.pointer a{
+    float:left;
+    width: 6px;
+    height: 6px;
+    border: 2px solid rgba(255,255,255,.4);
+    border-radius: 50%;
+    background-color:rgba(0,0,0,.4);
+    margin-left: 6px;
+}
+
+.pointer a:hover,
+.pointer a.active{
+    border-color: rgba(0,0,0,.4);
+    background-color: rgba(255,255,255,.4);
+}
+
+/*inti the arrows */
+
+.prev-next a{
+    width: 41px;
+    height: 69px;
+    background-image: url(/img/icon-slides.png);
+    position: absolute;
+    top:0;
+    bottom: 0;
+    margin:auto 0;
+}
+
+.prev-next .prev{
+    left: 234px;
+    background-position: -84px 0;
+}
+.prev-next .prev:hover{
+    background-position: 0 ;
+}
+
+.prev-next .next{
+    right: 0;
+    background-position: -125px 0;
+
+}
+
+.prev-next .next:hover{
+    background-position: -42px;
+}
+
+/* init back-top element */
+.back-top{
+    width: 26px;
+    height: 206px;
+    background-color:#616161;
+    /* location fix */
+
+    position:fixed;
+    bottom: 60px;
+    right: 50% ;/* init the right's width half of the view's */
+    margin-right:-639px;
+
+
+
+
+    /* layout :
+        left + margin.left + width+ margin-right + right  = view
+
+        auto  + 0          + 26 +      0         + 50%  = view 
+
+    */
+
+}
+
+.ad{
+   
+    height:170px;
+    margin-top: 14px;
+}
+
+.ad .shortcut,
+.ad .imgs,
+.ad li{
+    float:left;
+}
+
+/* init left shortcuts */
+.ad .shortcut{
+    width: 228px;
+    height: 168px;
+    background-color: #5f5750;
+    margin-right: 14px;
+    padding-top: 2px;
+    padding-left: 6px;
+
+}
+.ad .shortcut li{
+    position: relative;
+}
+
+/* not-border top-border */
+.ad .shortcut li::before{
+    content: '';
+    position: absolute;
+    width: 64px;
+    height: 1px;
+    background-color: #665e57;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: 0 auto;
+
+}
+
+/* not-border left-border */
+.ad .shortcut li::after{
+    content: '';
+    position: absolute;
+    height: 64px;
+    width: 1px;
+    background-color: #665e57;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+.ad .shortcut a{
+    display:block;
+    color:#cfccca;
+    height: 84px;
+    width:76px;
+    text-align: center;
+    font-size: 12px;
+    overflow: hidden;
+
+}
+
+
+.ad .shortcut img{
+    display:block;
+    width: 24px;
+    height: 24px;
+    margin: auto;
+    margin-top:20px;
+    margin-bottom: 6px;
+    filter: opacity(75%);
+   
+    
+
+}
+
+.ad .shortcut a:hover,
+.ad .shortcut a:hover img{
+    color:#fff;
+    filter: opacity(100%);
+    
+    
+}
+
+/* init ad imgs */
+.ad .imgs li{
+    width:316px;
+    margin-right: 15px;
+}
+
+.ad .imgs li:last-child{
+    margin:0;
+}
+.ad .imgs img{
+    width: 100%;
+    vertical-align: top;
+}
+
